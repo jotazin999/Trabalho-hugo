@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Cursos de Educação</title>
+    <style>
+        /* Definindo a tipografia e cores */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1d1f21;
+            color: #ddd;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #00bcd4, #4caf50);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: #212529;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4caf50;
+            transform: scale(1.1);
+        }
+
+        /* Seções */
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: #292b2f;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #00bcd4;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .course {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .course img {
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            margin-right: 30px;
+        }
+
+        .course-info h3 {
+            font-size: 28px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .course-info p {
+            color: #bbb;
+            margin: 10px 0;
+        }
+
+        .course button {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .course button:hover {
+            background-color: #45a049;
+        }
+
+        /* Depoimentos */
+        #depoimentos {
+            background-color: #212529;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #depoimentos p {
+            font-style: italic;
+            color: #bbb;
+            font-size: 18px;
+        }
+
+        #depoimentos p::before {
+            content: "“";
+            font-size: 36px;
+            color: #4caf50;
+            position: absolute;
+            left: -20px;
+            top: -10px;
+        }
+
+        #depoimentos p::after {
+            content: "”";
+            font-size: 36px;
+            color: #4caf50;
+            position: absolute;
+            right: -20px;
+            bottom: -10px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #212529;
+            color: #bbb;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Academia de Cursos Online</h1>
+        <p>Aprenda novas habilidades e se destaque no mercado de trabalho</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="cursos">
+        <h2>Cursos Disponíveis</h2>
+        
+        <div class="course">
+            <img src="https://idocode.com.br/wp-content/uploads/2021/07/pexels-luis-gomes-546819-1024x680.jpg.webp" alt="Curso de Programação">
+            <div class="course-info">
+                <h3>Curso de Programação</h3>
+                <p>Aprenda as principais linguagens de programação, como Python, JavaScript e mais.</p>
+                <button>Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://www.polocriativo.com.br/wp-content/uploads/2021/07/img_curso_marketing_digital.jpg" alt="Curso de Marketing Digital">
+            <div class="course-info">
+                <h3>Curso de Marketing Digital</h3>
+                <p>Desenvolva habilidades essenciais para alavancar negócios online.</p>
+                <button>Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://img.cdndsgni.com/preview/11393227.jpg" alt="Curso de Design Gráfico">
+            <div class="course-info">
+                <h3>Curso de Design Gráfico</h3>
+                <p>Aprenda a criar designs incríveis utilizando ferramentas como Photoshop e Illustrator.</p>
+                <button>Comprar Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <h2>O que nossos alunos dizem</h2>
+        <p>"Os cursos da Academia Online mudaram a minha vida! Aprendi habilidades valiosas que me ajudaram a crescer profissionalmente." - João Silva</p>
+        <p>"Recomendo os cursos, a metodologia de ensino é excelente e o conteúdo é muito rico." - Maria Oliveira</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Fale conosco para mais informações sobre os cursos.</p>
+        <p>Email: contato@academiaonline.com</p>
+        <p>Telefone: (11) 1234-5678</p>
+    </section>
+
+</body>
+</html>
+
