@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda de Cursos de Educação</title>
+    <title>Academia de Cursos Online</title>
     <style>
-        /* Definindo a tipografia e cores */
-        body {
-            font-family: 'Roboto', sans-serif;
+        /* Reset e Global */
+        * {
             margin: 0;
             padding: 0;
-            background: #1d1f21;
-            color: #ddd;
+            box-sizing: border-box;
         }
-        
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1d1f21;
+            color: #ddd;
+            overflow-x: hidden;
+            transition: background-color 0.5s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         /* Cabeçalho */
         header {
             background: linear-gradient(135deg, #00bcd4, #4caf50);
-            color: white;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 60px 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 4px solid #00bcd4;
         }
-        
+
         header h1 {
             margin: 0;
-            font-size: 48px;
+            font-size: 56px;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        
+
         header p {
-            font-size: 20px;
+            font-size: 24px;
             margin-top: 10px;
         }
 
@@ -56,51 +67,62 @@
         nav ul li a {
             color: #00bcd4;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             text-transform: uppercase;
-            padding: 10px;
-            transition: color 0.3s, transform 0.3s;
+            padding: 15px;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s;
+            border-radius: 5px;
         }
 
         nav ul li a:hover {
-            color: #4caf50;
+            color: #fff;
+            background-color: #4caf50;
             transform: scale(1.1);
         }
 
         /* Seções */
         section {
-            padding: 40px;
+            padding: 60px 20px;
             margin: 20px;
             background-color: #292b2f;
             border-radius: 8px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            display: none;
         }
 
         h2 {
             color: #00bcd4;
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
+        /* Seção de Cursos */
         .course {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             border-bottom: 1px solid #444;
             padding-bottom: 20px;
+            transition: transform 0.3s;
         }
 
         .course img {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             margin-right: 30px;
+            transition: transform 0.3s;
+        }
+
+        .course img:hover {
+            transform: scale(1.05);
         }
 
         .course-info h3 {
-            font-size: 28px;
+            font-size: 32px;
             color: #fff;
             margin: 0;
         }
@@ -108,13 +130,14 @@
         .course-info p {
             color: #bbb;
             margin: 10px 0;
+            font-size: 18px;
         }
 
         .course button {
             background-color: #4caf50;
             border: none;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             padding: 12px 24px;
             border-radius: 5px;
             cursor: pointer;
@@ -126,35 +149,50 @@
         }
 
         /* Depoimentos */
-        #depoimentos {
-            background-color: #212529;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
         #depoimentos p {
             font-style: italic;
             color: #bbb;
-            font-size: 18px;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
         #depoimentos p::before {
             content: "“";
-            font-size: 36px;
+            font-size: 48px;
             color: #4caf50;
             position: absolute;
-            left: -20px;
+            left: -30px;
             top: -10px;
         }
 
         #depoimentos p::after {
             content: "”";
-            font-size: 36px;
+            font-size: 48px;
             color: #4caf50;
             position: absolute;
-            right: -20px;
+            right: -30px;
             bottom: -10px;
+        }
+
+        /* Contato */
+        .form-container input,
+        .form-container button {
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 2px solid #444;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .form-container button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
         }
 
         /* Rodapé */
@@ -162,38 +200,60 @@
             background-color: #212529;
             color: #bbb;
             text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 30px 20px;
+            position: relative;
+            margin-top: 60px;
             box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
         }
 
+        footer p {
+            font-size: 18px;
+        }
+
+        /* Animações de Entrada */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para a seção ativa */
+        .active {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
     </style>
 </head>
 <body>
-
+    <!-- Cabeçalho -->
     <header>
         <h1>Academia de Cursos Online</h1>
         <p>Aprenda novas habilidades e se destaque no mercado de trabalho</p>
     </header>
 
+    <!-- Navegação -->
     <nav>
         <ul>
-            <li><a href="#cursos">Cursos</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#cursos" onclick="showSection('cursos')">Cursos</a></li>
+            <li><a href="#depoimentos" onclick="showSection('depoimentos')">Depoimentos</a></li>
+            <li><a href="#contato" onclick="showSection('contato')">Contato</a></li>
+            <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+            <li><a href="#sobre" onclick="showSection('sobre')">Sobre</a></li>
         </ul>
     </nav>
 
-    <section id="cursos">
+    <!-- Seção de Cursos -->
+    <section id="cursos" class="active">
         <h2>Cursos Disponíveis</h2>
         
         <div class="course">
             <img src="https://idocode.com.br/wp-content/uploads/2021/07/pexels-luis-gomes-546819-1024x680.jpg.webp" alt="Curso de Programação">
             <div class="course-info">
                 <h3>Curso de Programação</h3>
-                <p>Aprenda as principais linguagens de programação, como Python, JavaScript e mais.</p>
+                <p>Aprenda as principais linguagens de programação, como Python, JavaScript, C++, e mais. Este curso é ideal para iniciantes que querem construir uma base sólida em programação e para profissionais que buscam aprimorar suas habilidades em linguagens modernas.</p>
                 <button>Comprar Agora</button>
             </div>
         </div>
@@ -202,7 +262,7 @@
             <img src="https://www.polocriativo.com.br/wp-content/uploads/2021/07/img_curso_marketing_digital.jpg" alt="Curso de Marketing Digital">
             <div class="course-info">
                 <h3>Curso de Marketing Digital</h3>
-                <p>Desenvolva habilidades essenciais para alavancar negócios online.</p>
+                <p>Desenvolva habilidades essenciais para alavancar negócios online, incluindo SEO, mídia paga, redes sociais, email marketing, e mais. Com práticas e estudos de caso, você aprenderá a criar campanhas de marketing digital eficazes para diversos nichos de mercado.</p>
                 <button>Comprar Agora</button>
             </div>
         </div>
@@ -211,25 +271,77 @@
             <img src="https://img.cdndsgni.com/preview/11393227.jpg" alt="Curso de Design Gráfico">
             <div class="course-info">
                 <h3>Curso de Design Gráfico</h3>
-                <p>Aprenda a criar designs incríveis utilizando ferramentas como Photoshop e Illustrator.</p>
+                <p>Aprenda a criar designs incríveis utilizando ferramentas como Photoshop e Illustrator. Esse curso abrange desde a teoria do design até a criação de material gráfico para impressão e digital, com foco em aplicações práticas no mercado de trabalho.</p>
                 <button>Comprar Agora</button>
             </div>
         </div>
+
+        <div class="course">
+            <img src="https://via.placeholder.com/180" alt="Curso de Fotografia Digital">
+            <div class="course-info">
+                <h3>Curso de Fotografia Digital</h3>
+                <p>Aprenda técnicas avançadas de fotografia digital, desde a composição e iluminação até o uso de câmeras profissionais. Este curso é perfeito para quem deseja aprimorar suas habilidades fotográficas e entrar no mercado de fotografia profissional.</p>
+                <button>Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="https://via.placeholder.com/180" alt="Curso de Desenvolvimento Web">
+            <div class="course-info">
+                <h3>Curso de Desenvolvimento Web</h3>
+                <p>Construa sites e aplicações web desde o zero. Você aprenderá HTML, CSS, JavaScript, e frameworks modernos como React e Node.js. Com este curso, você estará pronto para trabalhar como desenvolvedor full-stack, criando projetos dinâmicos e interativos.</p>
+                <button>Comprar Agora</button>
+            </div>
+        </div>
+        
     </section>
 
+    <!-- Seção de Depoimentos -->
     <section id="depoimentos">
         <h2>O que nossos alunos dizem</h2>
         <p>"Os cursos da Academia Online mudaram a minha vida! Aprendi habilidades valiosas que me ajudaram a crescer profissionalmente." - João Silva</p>
-        <p>"Recomendo os cursos, a metodologia de ensino é excelente e o conteúdo é muito rico." - Maria Oliveira</p>
+        <p>"Recomendo os cursos, a metodologia de ensino é excelente e o conteúdo é muito rico. Após o curso de Marketing Digital, consegui aumentar significativamente a visibilidade do meu negócio online." - Maria Oliveira</p>
     </section>
 
+    <!-- Seção de Contato -->
     <section id="contato">
         <h2>Contato</h2>
-        <p>Fale conosco para mais informações sobre os cursos.</p>
-        <p>Email: contato@academiaonline.com</p>
-        <p>Telefone: (11) 1234-5678</p>
+        <div class="form-container">
+            <input type="text" id="name" placeholder="Seu Nome">
+            <input type="email" id="email" placeholder="Seu Email">
+            <button onclick="submitForm()">Enviar</button>
+        </div>
     </section>
 
+    <!-- Rodapé -->
+    <footer>
+        <p>Academia de Cursos Online | Email: contato@academiaonline.com | Telefone: (11) 1234-5678</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Alternar seções
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const section = document.getElementById(sectionId);
+            section.classList.add('active');
+        }
+
+        // Enviar formulário
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (name && email) {
+                alert(`Obrigado, ${name}! Você se inscreveu com sucesso.`);
+            } else {
+                alert("Por favor, preencha todos os campos.");
+            }
+        }
+    </script>
 </body>
 </html>
-
