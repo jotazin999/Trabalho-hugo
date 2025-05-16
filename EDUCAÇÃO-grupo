@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia de Cursos Online</title>
+    <title>Academia de Cursos Online - Aprenda e Transforme sua Carreira</title>
+    <meta name="description" content="Descubra nossa variedade de cursos online em programação, marketing digital, design gráfico e muito mais. Aprenda no seu ritmo e impulsione sua carreira.">
+    <meta name="keywords" content="cursos online, programação, marketing digital, design gráfico, desenvolvimento web, fotografia, educação online, carreira">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         /* Reset e Global */
         * {
@@ -14,10 +17,11 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #1d1f21;
-            color: #ddd;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
             overflow-x: hidden;
-            transition: background-color 0.5s;
+            padding-top: 60px; /* Espaço para a navbar fixa */
         }
 
         a {
@@ -28,320 +32,631 @@
         /* Cabeçalho */
         header {
             background: linear-gradient(135deg, #00bcd4, #4caf50);
+            color: white;
             text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 4px solid #00bcd4;
+            padding: 80px 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
             margin: 0;
-            font-size: 56px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 3.5em;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         header p {
-            font-size: 24px;
-            margin-top: 10px;
+            font-size: 1.5em;
+            margin-top: 15px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         /* Navegação */
         nav {
-            background-color: #212529;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            background-color: #333;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         nav ul {
             padding: 0;
             list-style: none;
-            margin: 0;
+            margin: 0 auto;
             text-align: center;
+            max-width: 1200px;
         }
 
         nav ul li {
             display: inline;
-            margin-right: 30px;
+            margin: 0 15px;
         }
 
         nav ul li a {
+            display: inline-block;
+            color: #eee;
+            font-size: 1.1em;
+            padding: 15px 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active-nav {
             color: #00bcd4;
-            text-decoration: none;
-            font-size: 22px;
             font-weight: bold;
-            text-transform: uppercase;
-            padding: 15px;
-            transition: color 0.3s, transform 0.3s, background-color 0.3s;
-            border-radius: 5px;
         }
 
-        nav ul li a:hover {
-            color: #fff;
-            background-color: #4caf50;
-            transform: scale(1.1);
+        /* Conteúdo Principal */
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
         }
 
-        /* Seções */
         section {
-            padding: 60px 20px;
-            margin: 20px;
-            background-color: #292b2f;
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
             border-radius: 8px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-            display: none;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color: #00bcd4;
-            font-size: 42px;
+        section h2 {
+            color: #333;
+            font-size: 2.5em;
             margin-bottom: 20px;
             text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00bcd4;
+        }
+
+        /* Seção Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero .button {
+            display: inline-block;
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .button:hover {
+            background-color: #0097a7;
         }
 
         /* Seção de Cursos */
-        .course {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 20px;
-            transition: transform 0.3s;
+        #cursos .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
-        .course img {
-            width: 180px;
-            height: 180px;
+        .course-card {
+            border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            margin-right: 30px;
-            transition: transform 0.3s;
+            overflow: hidden;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .course img:hover {
-            transform: scale(1.05);
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .course-info {
+            padding: 20px;
         }
 
         .course-info h3 {
-            font-size: 32px;
-            color: #fff;
-            margin: 0;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
         }
 
         .course-info p {
-            color: #bbb;
-            margin: 10px 0;
-            font-size: 18px;
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
-        .course button {
+        .course-info .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .course-info .details span {
+            display: block;
+        }
+
+        .course-info button {
             background-color: #4caf50;
-            border: none;
             color: white;
-            font-size: 20px;
-            padding: 12px 24px;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        .course button:hover {
+        .course-info button:hover {
             background-color: #45a049;
         }
 
         /* Depoimentos */
-        #depoimentos p {
+        #depoimentos .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-style: italic;
-            color: #bbb;
-            font-size: 20px;
-            margin-bottom: 20px;
+            color: #666;
+            position: relative;
+            background-color: #f9f9f9;
         }
 
-        #depoimentos p::before {
+        .testimonial::before {
             content: "“";
-            font-size: 48px;
-            color: #4caf50;
+            font-size: 3em;
+            color: #00bcd4;
             position: absolute;
-            left: -30px;
-            top: -10px;
+            left: 15px;
+            top: 10px;
         }
 
-        #depoimentos p::after {
+        .testimonial::after {
             content: "”";
-            font-size: 48px;
-            color: #4caf50;
+            font-size: 3em;
+            color: #00bcd4;
             position: absolute;
-            right: -30px;
-            bottom: -10px;
+            right: 15px;
+            bottom: 10px;
+        }
+
+        .testimonial p {
+            margin: 20px 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        .testimonial cite {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            color: #333;
+            margin-top: 15px;
+            font-size: 0.9em;
         }
 
         /* Contato */
-        .form-container input,
-        .form-container button {
-            padding: 15px;
-            margin: 10px;
-            border-radius: 5px;
-            border: 2px solid #444;
-            font-size: 18px;
+        #contato .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        #contato .form-group {
+            margin-bottom: 25px;
+        }
+
+        #contato label {
+            display: block;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #contato input[type="text"],
+        #contato input[type="email"],
+        #contato textarea {
             width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
 
-        .form-container button {
-            background-color: #4caf50;
+        #contato textarea {
+            min-height: 150px;
+        }
+
+        #contato button {
+            background-color: #00bcd4;
             color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: auto;
         }
 
-        .form-container button:hover {
-            background-color: #45a049;
+        #contato button:hover {
+            background-color: #0097a7;
+        }
+
+        /* Blog */
+        #blog .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-article {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+            background-color: white;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .blog-content p {
+            font-size: 1.05em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-content a {
+            color: #00bcd4;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .blog-content a:hover {
+            color: #0097a7;
+        }
+
+        .blog-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* Sobre */
+        #sobre .about-content {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #666;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        #sobre .mission-vision {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        #sobre .mission,
+        #sobre .vision {
+            flex: 1;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        #sobre h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        #sobre .team-section {
+            margin-top: 50px;
+        }
+
+        #sobre .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h5 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 0.95em;
+            color: #777;
         }
 
         /* Rodapé */
         footer {
-            background-color: #212529;
-            color: #bbb;
+            background-color: #333;
+            color: #eee;
             text-align: center;
-            padding: 30px 20px;
-            position: relative;
+            padding: 50px 20px;
             margin-top: 60px;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em;
         }
 
         footer p {
-            font-size: 18px;
+            margin-bottom: 15px;
         }
 
-        /* Animações de Entrada */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        footer a {
+            color: #00bcd4;
+            transition: color 0.3s ease;
         }
 
-        /* Estilo para a seção ativa */
-        .active {
-            display: block;
-            animation: fadeIn 1s ease-in-out;
+        footer a:hover {
+            color: #eee;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <h1>Academia de Cursos Online</h1>
-        <p>Aprenda novas habilidades e se destaque no mercado de trabalho</p>
+        <p>Aprenda no seu ritmo e transforme sua carreira!</p>
     </header>
 
-    <!-- Navegação -->
     <nav>
         <ul>
-            <li><a href="#cursos" onclick="showSection('cursos')">Cursos</a></li>
-            <li><a href="#depoimentos" onclick="showSection('depoimentos')">Depoimentos</a></li>
-            <li><a href="#contato" onclick="showSection('contato')">Contato</a></li>
-            <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
-            <li><a href="#sobre" onclick="showSection('sobre')">Sobre</a></li>
+            <li><a href="#cursos" class="active-nav">Cursos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#sobre">Sobre</a></li>
         </ul>
     </nav>
 
-    <!-- Seção de Cursos -->
-    <section id="cursos" class="active">
-        <h2>Cursos Disponíveis</h2>
-        
-        <div class="course">
-            <img src="https://idocode.com.br/wp-content/uploads/2021/07/pexels-luis-gomes-546819-1024x680.jpg.webp" alt="Curso de Programação">
-            <div class="course-info">
-                <h3>Curso de Programação</h3>
-                <p>Aprenda as principais linguagens de programação, como Python, JavaScript, C++, e mais. Este curso é ideal para iniciantes que querem construir uma base sólida em programação e para profissionais que buscam aprimorar suas habilidades em linguagens modernas.</p>
-                <button>Comprar Agora</button>
+    <main>
+        <section class="hero">
+            <h2>Bem-vindo à Academia de Cursos Online</h2>
+            <p>Sua jornada de aprendizado começa aqui. Explore nossos diversos cursos e adquira as habilidades que você sempre quis. Invista em seu futuro com nossos programas de ensino flexíveis e de alta qualidade.</p>
+            <a href="#cursos" class="button">Ver Nossos Cursos</a>
+        </section>
+
+        <section id="cursos">
+            <h2>Nossos Cursos em Destaque</h2>
+            <p>
+                Explore nossa ampla seleção de cursos online, projetados para atender às suas necessidades de aprendizado e ajudá-lo a alcançar seus objetivos de carreira. Nossos cursos são ministrados por especialistas do setor e abrangem desde os fundamentos até tópicos avançados.
+            </p>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/00bcd4/ffffff?Text=Programacao" alt="Curso de Programação">
+                    <div class="course-info">
+                        <h3>Programação para Iniciantes</h3>
+                        <p>Domine os fundamentos da programação e comece a construir seus próprios projetos.</p>
+                        <div class="details">
+                            <span>Duração: 12 semanas</span>
+                            <span>Nível: Básico</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/4caf50/ffffff?Text=MarketingDigital" alt="Curso de Marketing Digital">
+                    <div class="course-info">
+                        <h3>Marketing Digital Estratégico</h3>
+                        <p>Aprenda as melhores estratégias para promover seu negócio online e alcançar seus clientes.</p>
+                        <div class="details">
+                            <span>Duração: 10 semanas</span>
+                            <span>Nível: Intermediário</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/ff9800/ffffff?Text=DesignGrafico" alt="Curso de Design Gráfico">
+                    <div class="course-info">
+                        <h3>Design Gráfico Profissional</h3>
+                        <p>Desenvolva suas habilidades criativas e aprenda a criar visuais impactantes.</p>
+                        <div class="details">
+                            <span>Duração: 14 semanas</span>
+                            <span>Nível: Avançado</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/f44336/ffffff?Text=WebDevelopment" alt="Curso de Desenvolvimento Web">
+                    <div class="course-info">
+                        <h3>Desenvolvimento Web Full-Stack</h3>
+                        <p>Torne-se um desenvolvedor web completo, aprendendo front-end e back-end.</p>
+                        <div class="details">
+                            <span>Duração: 16 semanas</span>
+                            <span>Nível: Avançado</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/9c27b0/ffffff?Text=Fotografia" alt="Curso de Fotografia Digital">
+                    <div class="course-info">
+                        <h3>Fotografia Digital Avançada</h3>
+                        <p>Aprimore suas técnicas fotográficas e capture momentos incríveis.</p>
+                        <div class="details">
+                            <span>Duração: 8 semanas</span>
+                            <span>Nível: Intermediário</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://via.placeholder.com/400/607d8b/ffffff?Text=DataScience" alt="Curso de Ciência de Dados">
+                    <div class="course-info">
+                        <h3>Ciência de Dados e Análise</h3>
+                        <p>Descubra o poder dos dados e aprenda a tomar decisões estratégicas.</p>
+                        <div class="details">
+                            <span>Duração: 12 semanas</span>
+                            <span>Nível: Avançado</span>
+                        </div>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="course">
-            <img src="https://www.polocriativo.com.br/wp-content/uploads/2021/07/img_curso_marketing_digital.jpg" alt="Curso de Marketing Digital">
-            <div class="course-info">
-                <h3>Curso de Marketing Digital</h3>
-                <p>Desenvolva habilidades essenciais para alavancar negócios online, incluindo SEO, mídia paga, redes sociais, email marketing, e mais. Com práticas e estudos de caso, você aprenderá a criar campanhas de marketing digital eficazes para diversos nichos de mercado.</p>
-                <button>Comprar Agora</button>
+        <section id="depoimentos">
+            <h2>O que Nossos Alunos Dizem</h2>
+            <p>
+                Veja o que alguns de nossos alunos têm a dizer sobre sua experiência de aprendizado na Academia de Cursos Online. Seus depoimentos destacam o impacto positivo que nossos cursos tiveram em suas carreiras e vidas.
+            </p>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>A plataforma da Academia Online é incrível! Os cursos são bem estruturados e os instrutores são muito atenciosos. Consegui uma nova oportunidade de emprego após concluir o curso de programação.</p>
+                    <cite>- Ana Paula, Desenvolvedora Front-end</cite>
+                </div>
+                <div class="testimonial">
+                    <p>O curso de marketing digital superou minhas expectativas. Aprendi ferramentas e estratégias que realmente fizeram a diferença no meu negócio. Recomendo a todos!</p>
+                    <cite>- Carlos Silva, Empreendedor Digital</cite>
+                </div>
+                <div class="testimonial">
+                    <p>Sempre fui apaixonado por design, mas não sabia por onde começar. O curso de design gráfico da academia me deu as bases e as habilidades necessárias para iniciar minha carreira como freelancer.</p>
+                    <cite>- Mariana Oliveira, Designer Gráfico</cite>
+                </div>
+                <div class="testimonial">
+                    <p>Fiz o curso de fotografia e agora consigo tirar fotos incríveis! A didática do professor é excelente e os materiais de apoio são muito úteis.</p>
+                    <cite>- João Pedro, Fotógrafo Amador</cite>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="course">
-            <img src="https://img.cdndsgni.com/preview/11393227.jpg" alt="Curso de Design Gráfico">
-            <div class="course-info">
-                <h3>Curso de Design Gráfico</h3>
-                <p>Aprenda a criar designs incríveis utilizando ferramentas como Photoshop e Illustrator. Esse curso abrange desde a teoria do design até a criação de material gráfico para impressão e digital, com foco em aplicações práticas no mercado de trabalho.</p>
-                <button>Comprar Agora</button>
+        <section id="contato">
+            <h2>Entre em Contato Conosco</h2>
+            <p>
+                Tem alguma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato o mais breve possível. Você também pode nos encontrar em nossas redes sociais ou nos visitar em nosso escritório.
+            </p>
+            <div class="contact-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Seu Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Sua Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button">Enviar Mensagem</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Nossas Informações de Contato</h3>
+                    <p><strong>Endereço:</strong> 123 Rua Principal, Cidade, Estado, Brasil</p>
+                    <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+                    <p><strong>Email:</strong> contato@academiaonline.com</p>
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="course">
-            <img src="https://via.placeholder.com/180" alt="Curso de Fotografia Digital">
-            <div class="course-info">
-                <h3>Curso de Fotografia Digital</h3>
-                <p>Aprenda técnicas avançadas de fotografia digital, desde a composição e iluminação até o uso de câmeras profissionais. Este curso é perfeito para quem deseja aprimorar suas habilidades fotográficas e entrar no mercado de fotografia profissional.</p>
-                <button>Comprar Agora</button>
-            </div>
-        </div>
-
-        <div class="course">
-            <img src="https://via.placeholder.com/180" alt="Curso de Desenvolvimento Web">
-            <div class="course-info">
-                <h3>Curso de Desenvolvimento Web</h3>
-                <p>Construa sites e aplicações web desde o zero. Você aprenderá HTML, CSS, JavaScript, e frameworks modernos como React e Node.js. Com este curso, você estará pronto para trabalhar como desenvolvedor full-stack, criando projetos dinâmicos e interativos.</p>
-                <button>Comprar Agora</button>
-            </div>
-        </div>
-        
-    </section>
-
-    <!-- Seção de Depoimentos -->
-    <section id="depoimentos">
-        <h2>O que nossos alunos dizem</h2>
-        <p>"Os cursos da Academia Online mudaram a minha vida! Aprendi habilidades valiosas que me ajudaram a crescer profissionalmente." - João Silva</p>
-        <p>"Recomendo os cursos, a metodologia de ensino é excelente e o conteúdo é muito rico. Após o curso de Marketing Digital, consegui aumentar significativamente a visibilidade do meu negócio online." - Maria Oliveira</p>
-    </section>
-
-    <!-- Seção de Contato -->
-    <section id="contato">
-        <h2>Contato</h2>
-        <div class="form-container">
-            <input type="text" id="name" placeholder="Seu Nome">
-            <input type="email" id="email" placeholder="Seu Email">
-            <button onclick="submitForm()">Enviar</button>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>Academia de Cursos Online | Email: contato@academiaonline.com | Telefone: (11) 1234-5678</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Alternar seções
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            const section = document.getElementById(sectionId);
-            section.classList.add('active');
-        }
-
-        // Enviar formulário
-        function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-
-            if (name && email) {
-                alert(`Obrigado, ${name}! Você se inscreveu com sucesso.`);
-            } else {
-                alert("Por favor, preencha todos os campos.");
-            }
-        }
-    </script>
-</body>
-</html>
+        <section id="blog">
+            <h2>Nosso Blog</h2>
+            <p>
+                Fique por dentro das últimas notícias, dicas e tendências sobre educação online, desenvolvimento de carreira e muito mais. Nosso blog é atualizado regularmente com artigos informativos e inspiradores.
+            </p>
+            <div class="blog-list">
+                <div class="blog-article">
+                    <img src="https://via.placeholder.com/600/80cbc4/ffffff?Text=Dicas+de+Estudo+Online" alt="Dicas de Estudo Online">
+                    <div class="blog-content">
+                        <h3>5 Dicas Essenciais para Estudar Online com Eficácia</h3>
+                        <p class="blog-meta">Publicado em 20 de março de 2025</p>
+                        <p>Aprenda como organizar seu tempo, manter a motivação e aproveitar ao máximo s
