@@ -8,732 +8,103 @@
     <meta name="keywords" content="cursos online, programação, marketing digital, design gráfico, desenvolvimento web, fotografia, educação online, carreira">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
-    <style>
-        /* Reset e Global */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-            overflow: hidden; /* CHAVE: Remove a rolagem global do site */
-            padding-top: 60px; /* Mantido para navegação fixa visualmente */
-            height: 100vh; /* Altura total da viewport */
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(135deg, #00bcd4, #4caf50);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3.5em;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.5em;
-            margin-top: 15px;
-            font-weight: 300;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Navegação */
-        nav {
-            background-color: #333;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            position: fixed; /* Mantém a navegação fixa no topo */
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav ul {
-            padding: 0;
-            list-style: none;
-            margin: 0 auto;
-            text-align: center;
-            max-width: 1200px;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            display: inline-block;
-            color: #eee;
-            font-size: 1.1em;
-            padding: 15px 10px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active-nav {
-            color: #00bcd4;
-            font-weight: bold;
-        }
-
-        /* Conteúdo Principal */
-        main {
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            height: calc(100vh - 60px - 60px); /* 100vh - altura_nav - altura_footer */
-            display: flex;
-            align-items: center; /* Centraliza verticalmente a seção ativa no main */
-            justify-content: center; /* Centraliza horizontalmente a seção ativa no main */
-        }
-
-        /* ESTILO CHAVE: Oculta todas as seções por padrão */
-        .page-section {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-            display: none; /* Oculta a seção por padrão */
-            width: 100%; /* Garante que a seção ocupe a largura total disponível */
-            /* Removi overflow-y: auto e height: 100% para evitar rolagem interna e se ajustar */
-            max-height: calc(100vh - 60px - 60px - 60px); /* Altura máxima para caber na tela, ajustando cabeçalho, navegação e rodapé */
-
-            /* Adicionado para layout com ícone lateral */
-            display: flex; /* Transforma a seção em um container flex */
-            align-items: flex-start; /* Alinha o conteúdo e o ícone no topo */
-            gap: 20px; /* Espaço entre o ícone e o conteúdo */
-        }
-
-        /* ESTILO CHAVE: Mostra apenas a seção ativa */
-        .page-section.active {
-            display: flex; /* Torna a seção visível com flexbox */
-        }
-
-        .section-icon {
-            flex-shrink: 0; /* Impede que o ícone encolha */
-            font-size: 5em; /* Tamanho do ícone */
-            color: #00bcd4; /* Cor do ícone */
-            padding-right: 20px; /* Espaço à direita do ícone */
-            text-align: center;
-        }
-
-        .section-content {
-            flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
-            overflow-y: auto; /* Adiciona rolagem interna APENAS ao conteúdo se for muito grande */
-            max-height: calc(100vh - 60px - 60px - 60px - 60px); /* Ajusta altura máxima para o conteúdo rolável */
-        }
-
-        section h2 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-            position: relative;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #00bcd4;
-        }
-
-        /* Seção Hero */
-        #hero.page-section {
-            display: block; /* A seção hero é uma exceção e não terá o ícone lateral */
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        #hero.page-section .section-icon {
-            display: none; /* Esconde o ícone na seção hero */
-        }
-        #hero.page-section .section-content {
-            overflow-y: visible; /* Hero não precisa de rolagem interna */
-            max-height: none;
-        }
-
-
-        .hero h2 {
-            font-size: 3em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .hero .button {
-            display: inline-block;
-            background-color: #00bcd4;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .button:hover {
-            background-color: #0097a7;
-        }
-
-        /* Seção de Cursos */
-        #cursos .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .course-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .course-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .course-info {
-            padding: 20px;
-        }
-
-        .course-info h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .course-info p {
-            font-size: 1em;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .course-info .details {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #777;
-        }
-
-        .course-info .details span {
-            display: block;
-        }
-
-        .course-info button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        .course-info button:hover {
-            background-color: #45a049;
-        }
-
-        /* Depoimentos */
-        #depoimentos .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-style: italic;
-            color: #666;
-            position: relative;
-            background-color: #f9f9f9;
-        }
-
-        .testimonial::before {
-            content: "“";
-            font-size: 3em;
-            color: #00bcd4;
-            position: absolute;
-            left: 15px;
-            top: 10px;
-        }
-
-        .testimonial::after {
-            content: "”";
-            font-size: 3em;
-            color: #00bcd4;
-            position: absolute;
-            right: 15px;
-            bottom: 10px;
-        }
-
-        .testimonial p {
-            margin: 20px 15px;
-            font-size: 1.1em;
-            line-height: 1.7;
-        }
-
-        .testimonial cite {
-            display: block;
-            text-align: right;
-            font-style: normal;
-            color: #333;
-            margin-top: 15px;
-            font-size: 0.9em;
-        }
-
-        /* Contato */
-        #contato .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        #contato .form-group {
-            margin-bottom: 25px;
-        }
-
-        #contato label {
-            display: block;
-            font-size: 1.1em;
-            color: #333;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        #contato input[type="text"],
-        #contato input[type="email"],
-        #contato textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-
-        #contato textarea {
-            min-height: 150px;
-        }
-
-        #contato button {
-            background-color: #00bcd4;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            width: auto;
-        }
-
-        #contato button:hover {
-            background-color: #0097a7;
-        }
-
-        /* Blog */
-        #blog .blog-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .blog-article {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
-            background-color: white;
-        }
-
-        .blog-content {
-            padding: 25px;
-        }
-
-        .blog-content h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .blog-content p {
-            font-size: 1.05em;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .blog-content a {
-            color: #00bcd4;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .blog-content a:hover {
-            color: #0097a7;
-        }
-
-        .blog-meta {
-            font-size: 0.9em;
-            color: #777;
-            margin-bottom: 10px;
-        }
-
-        /* Sobre */
-        #sobre .about-content {
-            line-height: 1.8;
-            font-size: 1.1em;
-            color: #666;
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        #sobre .mission-vision {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        #sobre .mission,
-        #sobre .vision {
-            flex: 1;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: white;
-        }
-
-        #sobre h4 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        /* Estilização da seção "Nossa Equipe" - Removendo imagens de perfil */
-        #sobre .team-section {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        #sobre .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .team-member {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-member h5 {
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .team-member p {
-            font-size: 1em;
-            color: #777;
-        }
-
-
-        /* Rodapé */
-        footer {
-            background-color: #333;
-            color: #eee;
-            text-align: center;
-            padding: 20px 20px;
-            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 0.9em;
-            position: fixed; /* Fixa o rodapé na parte inferior */
-            bottom: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        footer a {
-            color: #00bcd4;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #eee;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            font-size: 1.2em;
-        }
-
-        /* Estilos adicionais para o blog - complemento do seu código */
-        #blog .blog-article a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #00bcd4;
-            color: white;
-            border-radius: 5px;
-            font-weight: normal;
-            transition: background-color 0.3s ease;
-        }
-
-        #blog .blog-article a:hover {
-            background-color: #0097a7;
-        }
-
-        /*
-        Estilos para Responsividade (Opcional, mas altamente recomendado)
-        Adicionei um exemplo de menu hambúrguer para demonstrar uma melhoria no "painel de opções"
-        */
-        .hamburger {
-            display: none; /* Esconde o ícone do hambúrguer em telas maiores */
-            font-size: 2em;
-            color: #eee;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 10px;
-            z-index: 1001; /* Acima da navegação */
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu de navegação por padrão em telas pequenas */
-                flex-direction: column;
-                width: 100%;
-                background-color: #333; /* Fundo do menu mobile */
-                position: absolute;
-                top: 60px; /* Abaixo da navbar fixa */
-                left: 0;
-                box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-            }
-
-            nav ul.active {
-                display: flex; /* Mostra o menu quando ativo */
-            }
-
-            nav ul li {
-                margin: 0;
-                width: 100%;
-            }
-
-            nav ul li a {
-                padding: 15px 20px;
-                text-align: left;
-                border-bottom: 1px solid #444; /* Separador de itens */
-            }
-
-            nav ul li:last-child a {
-                border-bottom: none;
-            }
-
-            .hamburger {
-                display: block; /* Mostra o ícone do hambúrguer */
-            }
-
-            /* Ajustar main e sections para telas menores */
-            main {
-                margin: 0 auto;
-                padding: 15px;
-                height: calc(100vh - 60px - 60px); /* Ajusta altura para mobile */
-            }
-            .page-section {
-                padding: 20px;
-                flex-direction: column; /* Ícone e conteúdo em coluna no mobile */
-                align-items: center; /* Centraliza itens */
-                text-align: center;
-                height: 100%; /* Ajusta altura para mobile */
-                max-height: calc(100vh - 60px - 60px - 60px); /* Ajusta altura máxima para o conteúdo rolável */
-            }
-            .section-icon {
-                padding-right: 0;
-                margin-bottom: 20px; /* Espaço abaixo do ícone no mobile */
-            }
-            .section-content {
-                overflow-y: auto; /* Rolagem interna para o conteúdo em mobile */
-                max-height: calc(100vh - 60px - 60px - 60px - 60px); /* Ajusta altura máxima para o conteúdo rolável */
-            }
-            header h1 {
-                font-size: 2.5em;
-            }
-            header p {
-                font-size: 1.2em;
-            }
-            section h2 {
-                font-size: 2em;
-            }
-            .course-card img {
-                height: 180px;
-            }
-            #sobre .mission-vision {
-                flex-direction: column;
-                gap: 20px;
-            }
-            #sobre .team-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            .blog-list {
-                grid-template-columns: 1fr; /* Blog em coluna única no mobile */
-            }
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
     <header>
         <h1>Academia de Cursos Online</h1>
-        <p>Aprenda no seu ritmo e transforme sua carreira!</p>
+        <p>Aprenda, Cresça, Transforme sua Carreira</p>
     </header>
 
-    <nav id="main-nav">
-        <div class="hamburger" id="hamburger-menu">☰</div>
+    <nav>
         <ul>
-            <li><a href="#hero" class="nav-link active-nav">Home</a></li>
-            <li><a href="#cursos" class="nav-link">Cursos</a></li>
-            <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-            <li><a href="#contato" class="nav-link">Contato</a></li>
-            <li><a href="#blog" class="nav-link">Blog</a></li>
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#hero" class="active-nav" data-section-id="hero">Início</a></li>
+            <li><a href="#cursos" data-section-id="cursos">Cursos</a></li>
+            <li><a href="#depoimentos" data-section-id="depoimentos">Depoimentos</a></li>
+            <li><a href="#contato" data-section-id="contato">Contato</a></li>
         </ul>
     </nav>
 
-    <main>
+    <nav class="section-nav">
+        <ul>
+            <li class="active" data-section="hero"></li>
+            <li data-section="cursos"></li>
+            <li data-section="depoimentos"></li>
+            <li data-section="contato"></li>
+        </ul>
+    </nav>
+
+    <div class="main-sections-container">
         <section id="hero" class="page-section active">
             <div class="section-content">
-                <h2>Bem-vindo à Academia de Cursos Online</h2>
-                <p>Sua jornada de aprendizado começa aqui. Explore nossos diversos cursos e adquira as habilidades que você sempre quis. Invista em seu futuro com nossos programas de ensino flexíveis e de alta qualidade.</p>
-                <a href="#cursos" class="button nav-link">Ver Nossos Cursos</a>
+                <h2>O Caminho para o seu Futuro Começa Aqui</h2>
+                <p>Nossa plataforma oferece cursos de alta qualidade para impulsionar sua carreira e expandir seus conhecimentos.</p>
+                <a href="#cursos" class="button cta-button">Explorar Cursos</a>
             </div>
         </section>
 
         <section id="cursos" class="page-section">
-            <div class="section-icon"><i class="fas fa-book"></i></div> <div class="section-content">
-                <h2>Nossos Cursos em Destaque</h2>
-                <p>
-                    Explore nossa ampla seleção de cursos online, projetados para atender às suas necessidades de aprendizado e ajudá-lo a alcançar seus objetivos de carreira. Nossos cursos são ministrados por especialistas do setor e abrangem desde os fundamentos até tópicos avançados.
-                </p>
+            <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="section-content">
+                <h2>Nossos Cursos Populares</h2>
                 <div class="course-grid">
                     <div class="course-card">
                         <img src="https://assets.dio.me/xXUUyscm16mjLd35m4TyJDABDC7ydUGMgnjAzd0pWb0/f:webp/q:80/L2FydGljbGVzL2NvdmVyL2U5OTdjZmVjLTRmYzQtNDFjMy04NThlLTBlODRjZWFiNGUwYi5qcGc" alt="Curso de Programação">
                         <div class="course-info">
-                            <h3>Programação para Iniciantes</h3>
-                            <p>Domine os fundamentos da programação e comece a construir seus próprios projetos.</p>
+                            <h3>Programação em Python</h3>
+                            <p>Domine a linguagem mais versátil do mercado, do básico ao avançado.</p>
                             <div class="details">
-                                <span>Duração: 12 semanas</span>
-                                <span>Nível: Básico</span>
+                                <span><i class="fas fa-clock"></i> 40h</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
                             </div>
-                            <button class="course-button" data-course="programacao-iniciantes">Saiba Mais</button>
+                            <button class="cta-button">Ver Detalhes</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <img src="https://www.conteudoinboundmarketing.com.br/wp-content/uploads/2019/10/digital-marketing-1.png" alt="Curso de Marketing Digital">
                         <div class="course-info">
-                            <h3>Marketing Digital Estratégico</h3>
-                            <p>Aprenda as melhores estratégias para promover seu negócio online e alcançar seus clientes.</p>
+                            <h3>Marketing Digital Completo</h3>
+                            <p>Aprenda SEO, Mídias Sociais, Anúncios Online e muito mais para impulsionar seu negócio.</p>
                             <div class="details">
-                                <span>Duração: 10 semanas</span>
-                                <span>Nível: Intermediário</span>
+                                <span><i class="fas fa-clock"></i> 30h</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
                             </div>
-                            <button class="course-button" data-course="marketing-digital">Saiba Mais</button>
+                            <button class="cta-button">Ver Detalhes</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <img src="https://nqm.com.br/wp-content/uploads/2023/09/shutterstock_1575501976-1536x1024.jpg" alt="Curso de Design Gráfico">
                         <div class="course-info">
-                            <h3>Design Gráfico Profissional</h3>
-                            <p>Desenvolva suas habilidades criativas e aprenda a criar visuais impactantes.</p>
+                            <h3>Design Gráfico para Iniciantes</h3>
+                            <p>Crie designs incríveis com as ferramentas e princípios essenciais do design gráfico.</p>
                             <div class="details">
-                                <span>Duração: 14 semanas</span>
-                                <span>Nível: Avançado</span>
+                                <span><i class="fas fa-clock"></i> 25h</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
                             </div>
-                            <button class="course-button" data-course="design-grafico">Saiba Mais</button>
+                            <button class="cta-button">Ver Detalhes</button>
                         </div>
                     </div>
-                    <div class="course-card">
-                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcPuyWHrU_ZPhxi2VYXBRQOIwq4d0RQ8JTusDb7yZ6i0LdkR_szjbtK5DjCJoqeZ8MrwVLMGsKL2bXjyMlG6wGT8u50SLhOsXLgGNjeG-8u8nU7mq0wjXIkOvgKiOSHFW6qbcoLRw?key=zhY4FDBv1MLLN5niIH_rVONZ" alt="Curso de Desenvolvimento Web">
+                     <div class="course-card">
+                        <img src="https://humanizaconsultoria.com.br/uploads/_thumb/cedoc_doc_16270/img16270_oukcx16qflxuj7j3pb6y8wwckpg107m2856amxdo3egt3mgvo0njkvd244j3pfeo8ig06huma6il66s87lm5esqkig17mcafmk59.jpg" alt="Curso de Desenvolvimento Web">
                         <div class="course-info">
-                            <h3>Desenvolvimento Web Full-Stack</h3>
-                            <p>Torne-se um desenvolvedor web completo, aprendendo front-end e back-end.</p>
+                            <h3>Desenvolvimento Web Fullstack</h3>
+                            <p>Construa aplicações web completas, do frontend ao backend.</p>
                             <div class="details">
-                                <span>Duração: 16 semanas</span>
-                                <span>Nível: Avançado</span>
+                                <span><i class="fas fa-clock"></i> 60h</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
                             </div>
-                            <button class="course-button" data-course="dev-web-fullstack">Saiba Mais</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="https://humanizaconsultoria.com.br/uploads/_thumb/cedoc_doc_16270/img16270_oukcx16qflxuj7j3pb6y8wwckpg107m2856amxdo3egt3mgvo0njkvd244j3pfeo8ig06huma6il66s87lm5esqkig17mcafmk59.jpg" alt="Curso de Fotografia Digital">
-                        <div class="course-info">
-                            <h3>Fotografia Digital Avançada</h3>
-                            <p>Aprimore suas técnicas fotográficas e capture momentos incríveis.</p>
-                            <div class="details">
-                                <span>Duração: 8 semanas</span>
-                                <span>Nível: Intermediário</span>
-                            </div>
-                            <button class="course-button" data-course="fotografia-digital">Saiba Mais</button>
+                            <button class="cta-button">Ver Detalhes</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <img src="https://bdasolutions.com.br/wp-content/uploads/2019/02/Cidadao-de-Ciencia-de-Dados-X-Analise-de-Dados-qual-a-relacao-miniatura.png" alt="Curso de Ciência de Dados">
                         <div class="course-info">
-                            <h3>Ciência de Dados e Análise</h3>
-                            <p>Descubra o poder dos dados e aprenda a tomar decisões estratégicas.</p>
+                            <h3>Introdução à Ciência de Dados</h3>
+                            <p>Analise dados e tire insights valiosos para tomadas de decisão inteligentes.</p>
                             <div class="details">
-                                <span>Duração: 12 semanas</span>
-                                <span>Nível: Avançado</span>
+                                <span><i class="fas fa-clock"></i> 35h</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
                             </div>
-                            <button class="course-button" data-course="ciencia-dados">Saiba Mais</button>
+                            <button class="cta-button">Ver Detalhes</button>
                         </div>
                     </div>
                 </div>
@@ -741,285 +112,533 @@
         </section>
 
         <section id="depoimentos" class="page-section">
-            <div class="section-icon"><i class="fas fa-quote-right"></i></div> <div class="section-content">
-                <h2>O que Nossos Alunos Dizem</h2>
-                <p>
-                    Veja o que alguns de nossos alunos têm a dizer sobre sua experiência de aprendizado na Academia de Cursos Online. Seus depoimentos destacam o impacto positivo que nossos cursos tiveram em suas carreiras e vidas.
-                </p>
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-content">
+                <h2>O Que Nossos Alunos Dizem</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial">
-                        <p>A plataforma da Academia Online é incrível! Os cursos são bem estruturados e os instrutores são muito atenciosos. Consegui uma nova oportunidade de emprego após concluir o curso de programação.</p>
-                        <cite>- Ana Paula, Desenvolvedora Front-end</cite>
+                        <p>Os cursos são fantásticos! Conteúdo prático e professores excelentes. Minha carreira alavancou!</p>
+                        <cite>- Maria Silva, Desenvolvedora Web</cite>
                     </div>
                     <div class="testimonial">
-                        <p>O curso de marketing digital superou minhas expectativas. Aprendi ferramentas e estratégias que realmente fizeram a diferença no meu negócio. Recomendo a todos!</p>
-                        <cite>- Carlos Silva, Empreendedor Digital</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>Sempre fui apaixonado por design, mas não sabia por onde começar. O curso de design gráfico da academia me deu as bases e as habilidades necessárias para iniciar minha carreira como freelancer.</p>
-                        <cite>- Mariana Oliveira, Designer Gráfico</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>Fiz o curso de fotografia e agora consigo tirar fotos incríveis! A didática do professor é excelente e os materiais de apoio são muito úteis.</p>
-                        <cite>- João Pedro, Fotógrafo Amador</cite>
+                        <p>Nunca pensei que aprender online seria tão eficaz. A plataforma é intuitiva e o suporte é incrível.</p>
+                        <cite>- João Oliveira, Especialista em Marketing</cite>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contato" class="page-section">
-            <div class="section-icon"><i class="fas fa-envelope"></i></div> <div class="section-content">
-                <h2>Entre em Contato Conosco</h2>
-                <p>
-                    Tem alguma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato o mais breve possível. Você também pode nos encontrar em nossas redes sociais ou nos visitar em nosso escritório.
-                </p>
+            <div class="section-icon"><i class="fas fa-envelope"></i></div>
+            <div class="section-content">
+                <h2>Entre em Contato</h2>
                 <div class="contact-container">
-                    <form class="contact-form">
+                    <form>
                         <div class="form-group">
-                            <label for="name">Seu Nome:</label>
+                            <label for="name">Nome:</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Seu Email:</label>
+                            <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Sua Mensagem:</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Mensagem:</label>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="button">Enviar Mensagem</button>
+                        <button type="submit" class="cta-button">Enviar Mensagem</button>
                     </form>
-                    <div class="contact-info">
-                        <h3>Nossas Informações de Contato</h3>
-                        <p><strong>Endereço:</strong> 123 Rua Principal, Cidade, Estado, Brasil</p>
-                        <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
-                        <p><strong>Email:</strong> contato@academiaonline.com</p>
-                        <h3>Redes Sociais</h3>
-                        <div class="social-links">
-                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <section id="blog" class="page-section">
-            <div class="section-icon"><i class="fas fa-blog"></i></div> <div class="section-content">
-                <h2>Nosso Blog</h2>
-                <p>
-                    Fique por dentro das últimas notícias, dicas e tendências sobre educação online e desenvolvimento de carreira.
-                </p>
-                <div class="blog-list">
-                    <div class="blog-article">
-                        <div class="blog-content">
-                            <h3>5 Dicas Essenciais para Estudar Online com Eficácia</h3>
-                            <p class="blog-meta">Publicado em 20 de março de 2025</p>
-                            <p>Aprenda como organizar seu tempo, manter a motivação e aproveitar ao máximo seus estudos online.</p>
-                            <a href="#">Ler Mais</a>
-                        </div>
-                    </div>
-                    <div class="blog-article">
-                        <div class="blog-content">
-                            <h3>As Melhores Carreiras em Tecnologia para 2025</h3>
-                            <p class="blog-meta">Publicado em 15 de março de 2025</p>
-                            <p>Descubra as áreas de tecnologia com maior demanda e como você pode se preparar para elas.</p>
-                            <a href="#">Ler Mais</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre" class="page-section">
-            <div class="section-icon"><i class="fas fa-lightbulb"></i></div> <div class="section-content">
-                <h2>Sobre a Academia de Cursos Online</h2>
-                <div class="about-content">
-                    <p>A Academia de Cursos Online nasceu da paixão por compartilhar conhecimento e do desejo de capacitar indivíduos para alcançarem seus objetivos profissionais e pessoais. Acreditamos que a educação de qualidade deve ser acessível a todos, em qualquer lugar e a qualquer hora.</p>
-                    <p>Nossa plataforma oferece uma vasta gama de cursos em diversas áreas, desde programação e marketing digital até design e fotografia. Contamos com instrutores experientes e uma metodologia de ensino flexível, focada na prática e na aplicação real do conhecimento.</p>
-                </div>
-                <div class="mission-vision">
-                    <div class="mission">
-                        <h4>Nossa Missão</h4>
-                        <p>Proporcionar educação online de alta qualidade, acessível e relevante, capacitando nossos alunos com as habilidades necessárias para prosperar no mercado de trabalho em constante evolução e transformar suas carreiras.</p>
-                    </div>
-                    <div class="vision">
-                        <h4>Nossa Visão</h4>
-                        <p>Ser a plataforma líder em educação online, reconhecida pela excelência de seus cursos, pela inovação em metodologias de ensino e pelo sucesso de seus alunos no alcance de seus objetivos.</p>
-                    </div>
-                </div>
-                <div class="team-section">
-                    <h2>Nossa Equipe</h2>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <h5>João Silva</h5>
-                            <p>CEO & Fundador</p>
-                        </div>
-                        <div class="team-member">
-                            <h5>Maria Souza</h5>
-                            <p>Diretora de Tecnologia</p>
-                        </div>
-                        <div class="team-member">
-                            <h5>Pedro Santos</h5>
-                            <p>Gerente de Marketing</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pageSections = document.querySelectorAll('.page-section');
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const navUl = document.querySelector('nav ul');
-
-            // Função para mostrar uma seção e ocultar as outras
-            function showSection(targetId) {
-                // Oculta todas as seções
-                pageSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                // Mostra a seção desejada
-                const activeSection = document.querySelector(targetId);
-                if (activeSection) {
-                    activeSection.classList.add('active');
-                    // Rola o conteúdo da seção para o topo, se ele tiver rolagem interna
-                    const sectionContent = activeSection.querySelector('.section-content');
-                    if (sectionContent) {
-                        sectionContent.scrollTop = 0;
-                    }
-                }
-            }
-
-            // Função para ativar o link de navegação
-            function activateNavLink(targetId) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active-nav');
-                    if (link.getAttribute('href') === targetId) {
-                        link.classList.add('active-nav');
-                    }
-                });
-            }
-
-            // Event Listener para os links de navegação
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Impede o comportamento padrão do link (rolagem ou navegação)
-
-                    const targetId = link.getAttribute('href');
-                    showSection(targetId); // Mostra a seção correspondente
-                    activateNavLink(targetId); // Ativa o link no menu
-
-                    // Se o menu hambúrguer estiver aberto, fecha-o após o clique
-                    if (navUl.classList.contains('active')) {
-                        navUl.classList.remove('active');
-                    }
-                });
-            });
-
-            // Event Listener para o botão "Ver Nossos Cursos" na seção Hero
-            const heroButton = document.querySelector('.hero .button');
-            if (heroButton) {
-                heroButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = heroButton.getAttribute('href');
-                    showSection(targetId);
-                    activateNavLink(targetId);
-                });
-            }
-
-            // Funcionalidade dos Botões "Saiba Mais" dos Cursos
-            const courseButtons = document.querySelectorAll('.course-button');
-
-            courseButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const courseName = button.dataset.course; // Obtém o valor do atributo data-course
-                    alert(`Você clicou em "Saiba Mais" para o curso de ${formatCourseName(courseName)}! Em um site real, isso levaria a uma página de detalhes do curso, ou a um modal de informações.`);
-                });
-            });
-
-            // Função auxiliar para formatar o nome do curso (ex: 'programacao-iniciantes' -> 'Programação para Iniciantes')
-            function formatCourseName(name) {
-                return name
-                    .split('-')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-            }
-
-            // Validação Básica de Formulário de Contato (Front-end)
-            const contactForm = document.querySelector('.contact-form');
-
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault(); // Impede o envio padrão do formulário
-
-                const nameInput = document.getElementById('name');
-                const emailInput = document.getElementById('email');
-                const messageTextarea = document.getElementById('message');
-
-                let isValid = true;
-                let errorMessage = '';
-
-                // Validação de nome
-                if (nameInput.value.trim() === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, digite seu nome.\n';
-                }
-
-                // Validação de email
-                if (emailInput.value.trim() === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, digite seu email.\n';
-                } else if (!isValidEmail(emailInput.value.trim())) {
-                    isValid = false;
-                    errorMessage += 'Por favor, digite um email válido.\n';
-                }
-
-                // Validação de mensagem
-                if (messageTextarea.value.trim() === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, digite sua mensagem.\n';
-                }
-
-                if (!isValid) {
-                    alert('Erro no formulário:\n' + errorMessage);
-                } else {
-                    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                    contactForm.reset(); // Limpa o formulário após o envio
-                }
-            });
-
-            function isValidEmail(email) {
-                // Regex simples para validação de email
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
-
-            // Funcionalidade do Menu Hambúrguer para Mobile
-            if (hamburgerMenu && navUl) {
-                hamburgerMenu.addEventListener('click', () => {
-                    navUl.classList.toggle('active'); // Alterna a classe 'active' para mostrar/esconder o menu
-                });
-            }
-
-            // Exibir a seção 'hero' por padrão ao carregar a página
-            // E garantir que o link "Home" esteja ativo
-            showSection('#hero');
-            activateNavLink('#hero');
-        });
-    </script>
-</body>
+    <script src="script.js"></script> </body>
 </html>
+/* Reset e Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    overflow: hidden; /* CHAVE: Remove a rolagem global do site */
+    height: 100vh; /* Altura total da viewport */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #00bcd4, #4caf50);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 20px; /* Reduzi o padding superior para ajustar ao layout */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Ajustei o tamanho */
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em; /* Ajustei o tamanho */
+    margin-top: 10px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Navegação Principal */
+nav {
+    background-color: #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Mantém a navegação fixa no topo */
+    top: 120px; /* Abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Abaixo do cabeçalho, mas acima do conteúdo */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1200px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: #eee;
+    font-size: 1.1em;
+    padding: 15px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active-nav {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+/* Container das Seções (principal área de conteúdo) */
+.main-sections-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 120px - 50px); /* Altura total - altura do cabeçalho - altura da navegação principal */
+    top: 170px; /* Posição inicial abaixo do cabeçalho e nav */
+    overflow: hidden; /* Importante para o efeito de transição das seções */
+}
+
+/* Estilo para cada Seção de Página */
+.page-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px); /* Largura total menos padding lateral */
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    height: 100%; /* Ocupa a altura total do container */
+    position: absolute; /* Posiciona seções de forma absoluta dentro do container */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* Esconde as seções abaixo da tela */
+    opacity: 0; /* Começa oculto */
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Transição suave */
+
+    display: flex; /* Para layout de ícone lateral e conteúdo */
+    align-items: flex-start; /* Alinha o conteúdo e o ícone no topo */
+    gap: 20px; /* Espaço entre o ícone e o conteúdo */
+}
+
+.page-section.active {
+    opacity: 1; /* Torna a seção ativa visível */
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Move a seção ativa para a posição correta */
+}
+
+.section-icon {
+    flex-shrink: 0; /* Impede que o ícone encolha */
+    font-size: 5em; /* Tamanho do ícone */
+    color: #00bcd4; /* Cor do ícone */
+    padding-right: 20px; /* Espaço à direita do ícone */
+    text-align: center;
+}
+
+.section-content {
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    overflow-y: auto; /* Adiciona rolagem interna APENAS ao conteúdo se for muito grande */
+    max-height: calc(100vh - 170px - 60px); /* Altura máxima para o conteúdo rolável, considerando header/nav */
+}
+
+/* Estilo específico para a seção Hero */
+#hero.page-section {
+    align-items: center; /* Centraliza o conteúdo verticalmente na seção hero */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo na seção hero */
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#hero.page-section .section-icon {
+    display: none; /* Esconde o ícone na seção hero */
+}
+#hero.page-section .section-content {
+    overflow-y: visible; /* Hero não precisa de rolagem interna */
+    max-height: none;
+}
+
+
+section h2 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00bcd4;
+}
+
+/* Botões CTA Genéricos */
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para o botão da Hero */
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Cores de fundo diferentes para cada seção (exemplo) */
+#hero { background-color: #e0f7fa; }
+#cursos { background-color: #c8e6c9; }
+#depoimentos { background-color: #ffecb3; }
+#contato { background-color: #ffcdd2; }
+
+
+/* Estilos das Seções de Conteúdo (Cursos, Depoimentos, Contato) */
+/* Cursos */
+#cursos .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustei minmax */
+    gap: 20px; /* Reduzi o gap */
+    justify-content: center;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px; /* Ajustei a altura da imagem */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.course-info {
+    padding: 15px; /* Reduzi o padding */
+}
+
+.course-info h3 {
+    font-size: 1.3em; /* Ajustei o tamanho */
+    margin-bottom: 8px;
+}
+
+.course-info p {
+    font-size: 0.95em; /* Ajustei o tamanho */
+    margin-bottom: 12px;
+}
+
+.course-info .details {
+    font-size: 0.85em; /* Ajustei o tamanho */
+    margin-bottom: 12px;
+}
+
+.course-info button {
+    padding: 8px 15px; /* Ajustei o padding do botão */
+    font-size: 0.95em;
+    background-color: #4caf50; /* Cor específica para botão de curso */
+}
+.course-info button:hover {
+    background-color: #45a049;
+}
+
+
+/* Depoimentos */
+#depoimentos .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustei minmax */
+    gap: 20px; /* Reduzi o gap */
+    justify-content: center;
+}
+
+.testimonial {
+    padding: 25px; /* Reduzi o padding */
+    font-style: italic;
+    font-size: 0.95em; /* Ajustei o tamanho */
+}
+
+.testimonial::before, .testimonial::after {
+    font-size: 2.5em; /* Ajustei o tamanho das aspas */
+}
+
+/* Contato */
+#contato .contact-container {
+    max-width: 600px; /* Reduzi a largura máxima */
+    padding: 25px;
+}
+
+#contato label {
+    font-size: 1em; /* Ajustei o tamanho */
+    margin-bottom: 5px;
+}
+
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    padding: 12px; /* Ajustei o padding */
+    font-size: 0.95em; /* Ajustei o tamanho */
+}
+
+#contato textarea {
+    min-height: 120px; /* Reduzi a altura mínima */
+}
+
+#contato button {
+    padding: 12px 25px; /* Ajustei o padding do botão */
+    font-size: 1em;
+}
+
+/* Navegação Lateral (Bolinhas) */
+.section-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Acima de tudo */
+}
+
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-nav li {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5); /* Cor clara para visibilidade */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease, transform 0.2s ease;
+}
+
+.section-nav li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.section-nav li.active {
+    background-color: #00bcd4; /* Cor ativa da bolinha */
+    border: 2px solid #00bcd4;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.7);
+    transform: scale(1.3);
+}
+
+/* Responsividade Básica (opcional, mas recomendado) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav {
+        top: 90px; /* Ajusta a navegação para telas menores */
+    }
+
+    .main-sections-container {
+        height: calc(100vh - 90px - 50px);
+        top: 140px;
+    }
+
+    .page-section {
+        padding: 20px;
+        flex-direction: column; /* Em telas menores, ícone e conteúdo empilham */
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-icon {
+        font-size: 3.5em;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .section-content {
+        max-height: calc(100vh - 140px - 60px); /* Ajusta altura máxima para o conteúdo rolável */
+    }
+
+    #cursos .course-grid,
+    #depoimentos .testimonial-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+
+    .section-nav {
+        right: 10px;
+        top: auto;
+        bottom: 20px; /* Move as bolinhas para a parte inferior em mobile */
+        transform: none;
+        display: flex;
+        flex-direction: row; /* Bolinhas lado a lado */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section-nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .section-nav li {
+        margin: 0;
+    }
+}document.addEventListener('DOMContentLoaded', () => {
+    const mainSectionsContainer = document.querySelector('.main-sections-container');
+    const sections = document.querySelectorAll('.page-section');
+    const navItems = document.querySelectorAll('.section-nav li');
+    const mainNavLinks = document.querySelectorAll('nav ul li a'); // Links da navegação principal
+
+    let currentSectionIndex = 0;
+    let isTransitioning = false; // Flag para evitar múltiplas transições rápidas
+
+    // Função para mostrar a seção
+    function showSection(index) {
+        // Evita transição se já estiver transicionando, ou se o índice for o mesmo/inválido
+        if (isTransitioning || index === currentSectionIndex || index < 0 || index >= sections.length) {
+            return;
+        }
+
+        isTransitioning = true;
+
+        // Remove a classe 'active' de todas as seções e itens de navegação
+        sections.forEach(s => s.classList.remove('active'));
+        navItems.forEach(item => item.classList.remove('active'));
+        mainNavLinks.forEach(link => link.classList.remove('active-nav'));
+
+        // Adiciona a classe 'active' à seção e navegação corretas
+        sections[index].classList.add('active');
+        navItems[index].classList.add('active');
+        
+        // Ativa o link na navegação principal correspondente à seção
+        const targetSectionId = sections[index].id;
+        const activeNavLink = document.querySelector(`nav ul li a[data-section-id="${targetSectionId}"]`);
+        if (activeNavLink) {
+            activeNavLink.classList.add('active-nav');
+        }
+
+        currentSectionIndex = index;
+
+        // Permite nova transição após a animação (ajuste o tempo para corresponder ao seu CSS)
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 900); // O tempo (900ms) deve ser um pouco maior que o tempo da transição no CSS (0.8s)
+    }
+
+    // Navegação por bolinhas laterais
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            showSection(index);
+        });
+    });
+
+    // Navegação principal (topo)
+    mainNavLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Impede o comportamento padrão de âncora
+            const targetId = link.getAttribute('data-section-id');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const index = Array.from(sections).indexOf(targetSection);
+                showSection(index);
+            }
+        });
+    });
+
+    // Navegação por roda do mouse/trackpad (scroll)
+    let scrollTimeout;
+    document.addEventListener('wheel', (event) => {
+        // Debounce para evitar múltiplos eventos de roda do mouse disparando transições rápidas
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (event.deltaY > 0) {
+                // Rolar para baixo (próxima seção)
+                showSection(currentSectionIndex + 1);
+            } else {
+                // Rolar para cima (seção anterior)
+                showSection(currentSectionIndex - 1);
+            }
+        }, 100); // Pequeno atraso para agrupar eventos de rolagem
+    }, { passive: false }); // Usar passive: false para poder usar preventDefault() se necessário (não usado aqui, mas boa prática)
+
+    // Navegação por setas do teclado
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown') {
+            showSection(currentSectionIndex + 1);
+            event.preventDefault(); // Previne o comportamento padrão de rolagem do navegador
+        } else if (event.key === 'ArrowUp') {
+            showSection(currentSectionIndex - 1);
+            event.preventDefault(); // Previne o comportamento padrão de rolagem do navegador
+        }
+    });
+
+    // Exibir a primeira seção ao carregar (e sincronizar navs)
+    showSection(0);
+});
