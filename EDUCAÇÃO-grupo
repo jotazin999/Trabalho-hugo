@@ -1,646 +1,665 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia de Cursos Online - Aprenda e Transforme sua Carreira</title>
-    <meta name="description" content="Descubra nossa variedade de cursos online em programação, marketing digital, design gráfico e muito mais. Aprenda no seu ritmo e impulsione sua carreira.">
-    <meta name="keywords" content="cursos online, programação, marketing digital, design gráfico, desenvolvimento web, fotografia, educação online, carreira">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT_CODE.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academia de Cursos Online - Aprenda e Transforme sua Carreira</title>
+  <meta name="description" content="Descubra nossa variedade de cursos online em programação, marketing digital, design gráfico e muito mais. Aprenda no seu ritmo e impulsione sua carreira." />
+  <meta name="keywords" content="cursos online, programação, marketing digital, design gráfico, desenvolvimento web, fotografia, educação online, carreira" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  <script src="https://kit.fontawesome.com/123456abcdef.js" crossorigin="anonymous" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Academia de Cursos Online</h1>
-        <p>Aprenda, Cresça, Transforme sua Carreira</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#hero" class="active-nav" data-section-id="hero">Início</a></li>
-            <li><a href="#cursos" data-section-id="cursos">Cursos</a></li>
-            <li><a href="#depoimentos" data-section-id="depoimentos">Depoimentos</a></li>
-            <li><a href="#contato" data-section-id="contato">Contato</a></li>
-        </ul>
+  <header>
+    <h1>Academia de Cursos Online</h1>
+    <p>Aprenda, Cresça, Transforme sua Carreira</p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#hero" class="active-nav">Início</a></li>
+        <li><a href="#vantagens">Vantagens</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <nav class="section-nav">
-        <ul>
-            <li class="active" data-section="hero"></li>
-            <li data-section="cursos"></li>
-            <li data-section="depoimentos"></li>
-            <li data-section="contato"></li>
+  <main class="main-sections-container">
+    <!-- Hero -->
+    <section id="hero" class="page-section active">
+      <div class="section-content">
+        <h2>O Caminho para o seu Futuro Começa Aqui</h2>
+        <p>Nossa plataforma oferece cursos de alta qualidade para impulsionar sua carreira e expandir seus conhecimentos.</p>
+        <a href="#cursos" class="button cta-button">Explorar Cursos</a>
+      </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section id="vantagens" class="page-section">
+      <div class="section-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+      <div class="section-content">
+        <h2>Por Que Escolher Nossa Academia?</h2>
+        <ul class="vantagens-list">
+          <li><strong>Flexibilidade:</strong> Estude no seu ritmo, onde e quando quiser.</li>
+          <li><strong>Professores Especializados:</strong> Instrutores experientes e atuantes no mercado.</li>
+          <li><strong>Certificado Reconhecido:</strong> Valide suas habilidades com nossos certificados digitais.</li>
+          <li><strong>Suporte Ativo:</strong> Atendimento rápido e eficiente para tirar todas as dúvidas.</li>
+          <li><strong>Comunidade:</strong> Acesso a grupos exclusivos para networking e troca de conhecimento.</li>
         </ul>
-    </nav>
+      </div>
+    </section>
 
-    <div class="main-sections-container">
-        <section id="hero" class="page-section active">
-            <div class="section-content">
-                <h2>O Caminho para o seu Futuro Começa Aqui</h2>
-                <p>Nossa plataforma oferece cursos de alta qualidade para impulsionar sua carreira e expandir seus conhecimentos.</p>
-                <a href="#cursos" class="button cta-button">Explorar Cursos</a>
+    <!-- Cursos -->
+    <section id="cursos" class="page-section">
+      <div class="section-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+      <div class="section-content">
+        <h2>Nossos Cursos Populares</h2>
+        <div class="course-grid">
+          <!-- Course Cards -->
+          <article class="course-card" tabindex="0" role="region" aria-label="Curso de Programação em Python">
+            <img src="https://idocode.com.br/wp-content/uploads/2021/08/Linguagens-de-programacao-quais-as-melhores-empresas-usam--1024x683.jpg.webp" alt="Curso de Programação em Python" />
+            <div class="course-info">
+              <h3>Programação em Python</h3>
+              <p>Domine a linguagem mais versátil do mercado, do básico ao avançado.</p>
+              <div class="details">
+                <span><i class="fas fa-clock"></i> 40h</span>
+                <span><i class="fas fa-star"></i> 4.8</span>
+              </div>
+              <button class="cta-button" aria-haspopup="dialog" aria-controls="modal-python" data-modal="modal-python">Ver Detalhes</button>
             </div>
-        </section>
+          </article>
 
-        <section id="cursos" class="page-section">
-            <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="section-content">
-                <h2>Nossos Cursos Populares</h2>
-                <div class="course-grid">
-                    <div class="course-card">
-                        <img src="https://assets.dio.me/xXUUyscm16mjLd35m4TyJDABDC7ydUGMgnjAzd0pWb0/f:webp/q:80/L2FydGljbGVzL2NvdmVyL2U5OTdjZmVjLTRmYzQtNDFjMy04NThlLTBlODRjZWFiNGUwYi5qcGc" alt="Curso de Programação">
-                        <div class="course-info">
-                            <h3>Programação em Python</h3>
-                            <p>Domine a linguagem mais versátil do mercado, do básico ao avançado.</p>
-                            <div class="details">
-                                <span><i class="fas fa-clock"></i> 40h</span>
-                                <span><i class="fas fa-star"></i> 4.8</span>
-                            </div>
-                            <button class="cta-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="https://www.conteudoinboundmarketing.com.br/wp-content/uploads/2019/10/digital-marketing-1.png" alt="Curso de Marketing Digital">
-                        <div class="course-info">
-                            <h3>Marketing Digital Completo</h3>
-                            <p>Aprenda SEO, Mídias Sociais, Anúncios Online e muito mais para impulsionar seu negócio.</p>
-                            <div class="details">
-                                <span><i class="fas fa-clock"></i> 30h</span>
-                                <span><i class="fas fa-star"></i> 4.7</span>
-                            </div>
-                            <button class="cta-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="https://nqm.com.br/wp-content/uploads/2023/09/shutterstock_1575501976-1536x1024.jpg" alt="Curso de Design Gráfico">
-                        <div class="course-info">
-                            <h3>Design Gráfico para Iniciantes</h3>
-                            <p>Crie designs incríveis com as ferramentas e princípios essenciais do design gráfico.</p>
-                            <div class="details">
-                                <span><i class="fas fa-clock"></i> 25h</span>
-                                <span><i class="fas fa-star"></i> 4.9</span>
-                            </div>
-                            <button class="cta-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="https://humanizaconsultoria.com.br/uploads/_thumb/cedoc_doc_16270/img16270_oukcx16qflxuj7j3pb6y8wwckpg107m2856amxdo3egt3mgvo0njkvd244j3pfeo8ig06huma6il66s87lm5esqkig17mcafmk59.jpg" alt="Curso de Desenvolvimento Web">
-                        <div class="course-info">
-                            <h3>Desenvolvimento Web Fullstack</h3>
-                            <p>Construa aplicações web completas, do frontend ao backend.</p>
-                            <div class="details">
-                                <span><i class="fas fa-clock"></i> 60h</span>
-                                <span><i class="fas fa-star"></i> 4.6</span>
-                            </div>
-                            <button class="cta-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="https://bdasolutions.com.br/wp-content/uploads/2019/02/Cidadao-de-Ciencia-de-Dados-X-Analise-de-Dados-qual-a-relacao-miniatura.png" alt="Curso de Ciência de Dados">
-                        <div class="course-info">
-                            <h3>Introdução à Ciência de Dados</h3>
-                            <p>Analise dados e tire insights valiosos para tomadas de decisão inteligentes.</p>
-                            <div class="details">
-                                <span><i class="fas fa-clock"></i> 35h</span>
-                                <span><i class="fas fa-star"></i> 4.7</span>
-                            </div>
-                            <button class="cta-button">Ver Detalhes</button>
-                        </div>
-                    </div>
-                </div>
+          <article class="course-card" tabindex="0" role="region" aria-label="Curso de Marketing Digital Completo">
+            <img src="https://www.conteudoinboundmarketing.com.br/wp-content/uploads/2019/10/digital-marketing-1.png" alt="Curso de Marketing Digital" />
+            <div class="course-info">
+              <h3>Marketing Digital Completo</h3>
+              <p>Aprenda SEO, Mídias Sociais, Anúncios Online e muito mais para impulsionar seu negócio.</p>
+              <div class="details">
+                <span><i class="fas fa-clock"></i> 30h</span>
+                <span><i class="fas fa-star"></i> 4.7</span>
+              </div>
+              <button class="cta-button" aria-haspopup="dialog" aria-controls="modal-marketing" data-modal="modal-marketing">Ver Detalhes</button>
             </div>
-        </section>
+          </article>
 
-        <section id="depoimentos" class="page-section">
-            <div class="section-icon"><i class="fas fa-comments"></i></div>
-            <div class="section-content">
-                <h2>O Que Nossos Alunos Dizem</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial">
-                        <p>Os cursos são fantásticos! Conteúdo prático e professores excelentes. Minha carreira alavancou!</p>
-                        <cite>- Maria Silva, Desenvolvedora Web</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>Nunca pensei que aprender online seria tão eficaz. A plataforma é intuitiva e o suporte é incrível.</p>
-                        <cite>- João Oliveira, Especialista em Marketing</cite>
-                    </div>
-                </div>
+          <article class="course-card" tabindex="0" role="region" aria-label="Curso de Design Gráfico para Iniciantes">
+            <img src="https://nqm.com.br/wp-content/uploads/2023/09/shutterstock_1575501976-1536x1024.jpg" alt="Curso de Design Gráfico" />
+            <div class="course-info">
+              <h3>Design Gráfico para Iniciantes</h3>
+              <p>Crie designs incríveis com as ferramentas e princípios essenciais do design gráfico.</p>
+              <div class="details">
+                <span><i class="fas fa-clock"></i> 25h</span>
+                <span><i class="fas fa-star"></i> 4.9</span>
+              </div>
+              <button class="cta-button" aria-haspopup="dialog" aria-controls="modal-design" data-modal="modal-design">Ver Detalhes</button>
             </div>
-        </section>
+          </article>
 
-        <section id="contato" class="page-section">
-            <div class="section-icon"><i class="fas fa-envelope"></i></div>
-            <div class="section-content">
-                <h2>Entre em Contato</h2>
-                <div class="contact-container">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nome:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem:</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button">Enviar Mensagem</button>
-                    </form>
-                </div>
+          <article class="course-card" tabindex="0" role="region" aria-label="Curso de Desenvolvimento Web Fullstack">
+            <img src="https://humanizaconsultoria.com.br/uploads/_thumb/cedoc_doc_16270/img16270_oukcx16qflxuj7j3pb6y8wwckpg107m2856amxdo3egt3mgvo0njkvd244j3pfeo8ig06huma6il66s87lm5esqkig17mcafmk59.jpg" alt="Curso de Desenvolvimento Web" />
+            <div class="course-info">
+              <h3>Desenvolvimento Web Fullstack</h3>
+              <p>Construa aplicações web completas, do frontend ao backend.</p>
+              <div class="details">
+                <span><i class="fas fa-clock"></i> 60h</span>
+                <span><i class="fas fa-star"></i> 4.6</span>
+              </div>
+              <button class="cta-button" aria-haspopup="dialog" aria-controls="modal-web" data-modal="modal-web">Ver Detalhes</button>
             </div>
-        </section>
-    </div>
+          </article>
 
-    <script src="script.js"></script>
+          <article class="course-card" tabindex="0" role="region" aria-label="Curso de Introdução à Ciência de Dados">
+            <img src="https://bdasolutions.com.br/wp-content/uploads/2019/02/Cidadao-de-Ciencia-de-Dados-X-Analise-de-Dados-qual-a-relacao-miniatura.png" alt="Curso de Ciência de Dados" />
+            <div class="course-info">
+              <h3>Introdução à Ciência de Dados</h3>
+              <p>Analise dados e tire insights valiosos para tomadas de decisão inteligentes.</p>
+              <div class="details">
+                <span><i class="fas fa-clock"></i> 35h</span>
+                <span><i class="fas fa-star"></i> 4.7</span>
+              </div>
+              <button class="cta-button" aria-haspopup="dialog" aria-controls="modal-dados" data-modal="modal-dados">Ver Detalhes</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="page-section">
+      <div class="section-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+      <div class="section-content">
+        <h2>O Que Nossos Alunos Dizem</h2>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial" tabindex="0">
+            <p>Os cursos são fantásticos! Conteúdo prático e professores excelentes. Minha carreira alavancou!</p>
+            <cite>- Maria Silva, Desenvolvedora Web</cite>
+          </blockquote>
+          <blockquote class="testimonial" tabindex="0">
+            <p>Nunca pensei que aprender online seria tão eficaz. A plataforma é intuitiva e o suporte é incrível.</p>
+            <cite>- João Oliveira, Especialista em Marketing</cite>
+          </blockquote>
+          <blockquote class="testimonial" tabindex="0">
+            <p>Aprendi muito em pouco tempo! Recomendo para quem quer se destacar no mercado.</p>
+            <cite>- Ana Paula, Analista de Dados</cite>
+          </blockquote>
+          <blockquote class="testimonial" tabindex="0">
+            <p>As aulas são dinâmicas e o material didático é excelente. Estou muito satisfeito com o curso.</p>
+            <cite>- Carlos Mendes, Designer Gráfico</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="page-section">
+      <header>
+        <h2>Conheça Nossa Equipe</h2>
+      </header>
+      <div class="team-grid">
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto do professor João Silva" />
+          <h3>João Silva</h3>
+          <p>Especialista em Python e Desenvolvimento Web Fullstack, com mais de 10 anos de experiência.</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto da professora Ana Souza" />
+          <h3>Ana Souza</h3>
+          <p>Instrutora de Marketing Digital, apaixonada por estratégias que convertem e crescimento orgânico.</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Foto do professor Carlos Lima" />
+          <h3>Carlos Lima</h3>
+          <p>Designer gráfico e UX designer, focado em criar experiências visuais incríveis e intuitivas.</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto da professora Maria Fernanda" />
+          <h3>Maria Fernanda</h3>
+          <p>Especialista em Ciência de Dados e Análise de Big Data, com vasta experiência em projetos reais.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="page-section">
+      <header>
+        <h2>Últimas do Blog</h2>
+      </header>
+      <div class="blog-posts-grid">
+        <article class="blog-post" tabindex="0">
+          <h3><a href="#">5 Dicas para Aprender Programação Rápido</a></h3>
+          <p>Descubra técnicas comprovadas para acelerar seu aprendizado em programação e conseguir resultados rápidos.</p>
+          <time datetime="2025-05-20">20 de Maio de 2025</time>
+        </article>
+        <article class="blog-post" tabindex="0">
+          <h3><a href="#">Como o Marketing Digital Pode Impulsionar Seu Negócio</a></h3>
+          <p>Saiba quais estratégias digitais estão transformando pequenas empresas em grandes marcas.</p>
+          <time datetime="2025-05-15">15 de Maio de 2025</time>
+        </article>
+        <article class="blog-post" tabindex="0">
+          <h3><a href="#">Introdução ao Design Responsivo: Faça Seu Site Brilhar</a></h3>
+          <p>Entenda os fundamentos do design responsivo para criar sites que funcionam em qualquer dispositivo.</p>
+          <time datetime="2025-05-10">10 de Maio de 2025</time>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="page-section">
+      <header>
+        <h2>Perguntas Frequentes</h2>
+      </header>
+      <dl class="faq-list">
+        <dt tabindex="0">Os cursos possuem certificado?</dt>
+        <dd>Sim! Todos os nossos cursos oferecem certificado digital reconhecido no mercado após a conclusão.</dd>
+
+        <dt tabindex="0">Posso acessar os cursos pelo celular?</dt>
+        <dd>Claro! Nossa plataforma é totalmente responsiva e funciona em smartphones e tablets.</dd>
+
+        <dt tabindex="0">Qual a duração média dos cursos?</dt>
+        <dd>Os cursos variam de 20 a 60 horas, permitindo que você aprenda no seu ritmo.</dd>
+
+        <dt tabindex="0">Existe suporte durante o curso?</dt>
+        <dd>Sim, contamos com uma equipe de suporte pronta para tirar dúvidas e ajudar sempre que precisar.</dd>
+      </dl>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="page-section">
+      <header>
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou deseja saber mais? Fale conosco!</p>
+      </header>
+      <form action="enviar.php" method="POST" novalidate>
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui" required></textarea>
+
+        <button type="submit" class="cta-button">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>
 
-/* Reset e Global */
+
+/* Variáveis para temas e espaçamentos */
+:root {
+  --primary-color: #005eff;
+  --secondary-color: #002f7f;
+  --background: #ffffff;
+  --text-color: #222;
+  --accent: #00c4ff;
+  --border-radius: 1rem;
+  --transition: all 0.3s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --text-color: #eee;
+    --secondary-color: #1f1f1f;
+  }
+}
+
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    overflow: hidden; /* CHAVE: Remove a rolagem global do site */
-    height: 100vh; /* Altura total da viewport */
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Cabeçalho */
+/* Header e navegação */
 header {
-    background: linear-gradient(135deg, #00bcd4, #4caf50);
-    color: white;
-    text-align: center;
-    padding: 40px 20px 20px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    font-weight: 300;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Navegação Principal */
-nav {
-    background-color: #333;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 120px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
 nav ul {
-    padding: 0;
-    list-style: none;
-    margin: 0 auto;
-    text-align: center;
-    max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 1rem 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: var(--transition);
 }
 
-nav ul li a {
-    display: inline-block;
-    color: #eee;
-    font-size: 1.1em;
-    padding: 15px 10px;
-    transition: color 0.3s ease;
+nav a:hover,
+nav a.active-nav {
+  background-color: var(--accent);
+  color: #000;
 }
 
-nav ul li a:hover,
-nav ul li a.active-nav {
-    color: #00bcd4;
-    font-weight: bold;
-}
-
-/* Container das Seções (principal área de conteúdo) */
-.main-sections-container {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 120px - 50px);
-    top: 170px;
-    overflow: hidden;
-}
-
-/* Estilo para cada Seção de Página */
+/* Seções */
 .page-section {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 40px);
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.page-section.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .section-icon {
-    flex-shrink: 0;
-    font-size: 5em;
-    color: #00bcd4;
-    padding-right: 20px;
-    text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 .section-content {
-    flex-grow: 1;
-    overflow-y: auto;
-    max-height: calc(100vh - 170px - 60px);
+  text-align: center;
 }
 
-/* Estilo específico para a seção Hero */
-#hero.page-section {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f9f9f9;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
-#hero.page-section .section-icon {
-    display: none;
-}
-#hero.page-section .section-content {
-    overflow-y: visible;
-    max-height: none;
-}
-
-section h2 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-    position: relative;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #00bcd4;
-}
-
-/* Botões CTA Genéricos */
+/* Botões */
 .cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.05);
 }
 
-/* Cores de fundo diferentes para cada seção (exemplo) */
-#hero { background-color: #e0f7fa; }
-#cursos { background-color: #c8e6c9; }
-#depoimentos { background-color: #ffecb3; }
-#contato { background-color: #ffcdd2; }
-
-/* Estilos das Seções de Conteúdo (Cursos, Depoimentos, Contato) */
 /* Cursos */
-#cursos .course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .course-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease-in-out;
-    background-color: #fff;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .course-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .course-info {
-    padding: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.course-info h3 {
-    font-size: 1.3em;
-    margin-bottom: 8px;
-}
-
-.course-info p {
-    font-size: 0.95em;
-    margin-bottom: 12px;
-}
-
-.course-info .details {
-    font-size: 0.85em;
-    margin-bottom: 12px;
-}
-
-.course-info button {
-    padding: 8px 15px;
-    font-size: 0.95em;
-    background-color: #4caf50;
-}
-.course-info button:hover {
-    background-color: #45a049;
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 /* Depoimentos */
-#depoimentos .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .testimonial {
-    padding: 25px;
-    font-style: italic;
-    font-size: 0.95em;
+  background: var(--secondary-color);
+  color: #fff;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
-.testimonial::before, .testimonial::after {
-    font-size: 2.5em;
+.testimonial:hover {
+  background: var(--primary-color);
+  transform: scale(1.03);
 }
 
-/* Contato */
-#contato .contact-container {
-    max-width: 600px;
-    padding: 25px;
+/* Equipe */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-#contato label {
-    font-size: 1em;
-    margin-bottom: 5px;
+.team-member {
+  text-align: center;
+  max-width: 220px;
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
-#contato input[type="text"],
-#contato input[type="email"],
-#contato textarea {
-    padding: 12px;
-    font-size: 0.95em;
+.team-member:hover {
+  background: var(--primary-color);
 }
 
-#contato textarea {
-    min-height: 120px;
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
-#contato button {
-    padding: 12px 25px;
-    font-size: 1em;
+/* Blog */
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Navegação Lateral (Bolinhas) */
-.section-nav {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
+.blog-post {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
-.section-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.blog-post:hover {
+  background: var(--primary-color);
 }
 
-.section-nav li {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border 0.3s ease, transform 0.2s ease;
+.blog-post h3 a {
+  text-decoration: none;
+  color: var(--accent);
 }
 
-.section-nav li:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
+time {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
 }
 
-.section-nav li.active {
-    background-color: #00bcd4;
-    border: 2px solid #00bcd4;
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.7);
-    transform: scale(1.3);
+/* FAQ */
+.faq-list dt {
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
-/* Responsividade Básica */
+.faq-list dd {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+/* Formulário de contato */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  background: #fff;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
+  nav ul {
+    flex-direction: column;
+  }
 
-    header p {
-        font-size: 1em;
-    }
+  .course-grid,
+  .testimonial-grid,
+  .blog-posts-grid {
+    grid-template-columns: 1fr;
+  }
 
-    nav {
-        top: 90px;
-    }
-
-    .main-sections-container {
-        height: calc(100vh - 90px - 50px);
-        top: 140px;
-    }
-
-    .page-section {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .section-icon {
-        font-size: 3.5em;
-        padding-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .section-content {
-        max-height: calc(100vh - 140px - 60px);
-    }
-
-    #cursos .course-grid,
-    #depoimentos .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-nav {
-        right: 10px;
-        top: auto;
-        bottom: 20px;
-        transform: none;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .section-nav ul {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .section-nav li {
-        margin: 0;
-    }
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const mainSectionsContainer = document.querySelector('.main-sections-container');
-    const sections = document.querySelectorAll('.page-section');
-    const navItems = document.querySelectorAll('.section-nav li');
-    const mainNavLinks = document.querySelectorAll('nav ul li a'); // Links da navegação principal
 
-    let currentSectionIndex = 0;
-    let isTransitioning = false; // Flag para evitar múltiplas transições rápidas
 
-    // Função para mostrar a seção
-    function showSection(index) {
-        // Evita transição se já estiver transicionando, ou se o índice for o mesmo/inválido
-        if (isTransitioning || index === currentSectionIndex || index < 0 || index >= sections.length) {
-            return;
-        }
-
-        isTransitioning = true;
-
-        // Remove a classe 'active' de todas as seções e itens de navegação
-        sections.forEach(s => s.classList.remove('active'));
-        navItems.forEach(item => item.classList.remove('active'));
-        mainNavLinks.forEach(link => link.classList.remove('active-nav'));
-
-        // Adiciona a classe 'active' à seção e navegação corretas
-        sections[index].classList.add('active');
-        navItems[index].classList.add('active');
-        
-        // Ativa o link na navegação principal correspondente à seção
-        const targetSectionId = sections[index].id;
-        const activeNavLink = document.querySelector(`nav ul li a[data-section-id="${targetSectionId}"]`);
-        if (activeNavLink) {
-            activeNavLink.classList.add('active-nav');
-        }
-
-        currentSectionIndex = index;
-
-        // Permite nova transição após a animação (ajuste o tempo para corresponder ao seu CSS)
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 900); // O tempo (900ms) deve ser um pouco maior que o tempo da transição no CSS (0.8s)
+// Scroll suave nos links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
+  });
+});
 
-    // Navegação por bolinhas laterais
-    navItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            showSection(index);
-        });
+// Ativação dinâmica do menu com base na rolagem
+const navLinks = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('.page-section');
+
+function updateActiveLink() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+    const id = section.getAttribute('id');
+
+    if (scrollPos >= top && scrollPos < bottom) {
+      navLinks.forEach(link => link.classList.remove('active-nav'));
+      const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add('active-nav');
+    }
+  });
+}
+window.addEventListener('scroll', updateActiveLink);
+updateActiveLink(); // Chamada inicial
+
+// Scroll Reveal das seções com animação
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.page-section').forEach(section => {
+  section.classList.add('hidden');
+  observer.observe(section);
+});
+
+// Animações de entrada (fade-up) para os cards
+const fadeElements = document.querySelectorAll('.course-card, .testimonial, .blog-post, .team-member');
+fadeElements.forEach(el => {
+  el.classList.add('fade-up');
+  observer.observe(el);
+});
+
+// Modal para cursos
+const courses = document.querySelectorAll('.course-card');
+courses.forEach(course => {
+  course.addEventListener('click', () => {
+    const title = course.querySelector('h3').textContent;
+    const details = course.querySelector('.details')?.innerHTML || '';
+    showModal(title, details);
+  });
+});
+
+function showModal(title, content) {
+  let modal = document.querySelector('.modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2></h2>
+        <div class="modal-body"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.querySelector('.modal-close').addEventListener('click', () => {
+      modal.classList.remove('show');
     });
 
-    // Navegação principal (topo)
-    mainNavLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Impede o comportamento padrão de âncora
-            const targetId = link.getAttribute('data-section-id');
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                const index = Array.from(sections).indexOf(targetSection);
-                showSection(index);
-            }
-        });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
     });
+  }
 
-    // Navegação por roda do mouse/trackpad (scroll)
-    let scrollTimeout;
-    document.addEventListener('wheel', (event) => {
-        // Debounce para evitar múltiplos eventos de roda do mouse disparando transições rápidas
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            if (event.deltaY > 0) {
-                // Rolar para baixo (próxima seção)
-                showSection(currentSectionIndex + 1);
-            } else {
-                // Rolar para cima (seção anterior)
-                showSection(currentSectionIndex - 1);
-            }
-        }, 100); // Pequeno atraso para agrupar eventos de rolagem
-    }, { passive: false }); // Usar passive: false para poder usar preventDefault() se necessário (não usado aqui, mas boa prática)
+  modal.querySelector('h2').textContent = title;
+  modal.querySelector('.modal-body').innerHTML = content;
+  modal.classList.add('show');
+}
 
-    // Navegação por setas do teclado
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowDown') {
-            showSection(currentSectionIndex + 1);
-            event.preventDefault(); // Previne o comportamento padrão de rolagem do navegador
-        } else if (event.key === 'ArrowUp') {
-            showSection(currentSectionIndex - 1);
-            event.preventDefault(); // Previne o comportamento padrão de rolagem do navegador
-        }
-    });
+// Botão "Voltar ao topo" (opcional)
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.textContent = '↑';
+scrollTopBtn.className = 'scroll-top';
+document.body.appendChild(scrollTopBtn);
 
-    // Exibir a primeira seção ao carregar (e sincronizar navs)
-    showSection(0);
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
 });
